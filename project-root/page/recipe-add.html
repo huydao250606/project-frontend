@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add new Recipe</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <link rel="stylesheet" href="../css/recipe-add.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+  </head>
+  <body class="body-page">
+    <header class="header-page">
+      <nav>
+        <button id="btn-menu">
+          <img src="../assets/icons/btn-menu.png" alt="" />
+        </button>
+        <p>
+          <span id="username"></span>
+          <img src="../assets/images/avatar-facebook-nam-vo-danh.jpeg" alt="" />
+        </p>
+      </nav>
+      <hr />
+      <div>
+        <p>Recipes</p>
+        <p>Create, check and update recipes</p>
+      </div>
+    </header>
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <img src="../assets/images/images-removebg-preview 1.png" alt="" />
+      </div>
+      <div class="sidebar-list-index">
+        <ul class="sidebar-list">
+          <li>
+            <img src="../assets/icons/icon-home-sidebar.png" alt="" />
+            <a href="homepage.html" style="color: FFFFFF">Homepage</a>
+          </li>
+          <li>
+            <img src="../assets/icons/icon-food-sidebar.png" alt="" />
+            <a href="foods.html">Foods</a>
+          </li>
+          <li style="background-color: #293846">
+            <img src="../assets/icons/icon-recipes-sidebar-color.png" alt="" />
+            <a href="recipes.html">Recipes</a>
+          </li>
+        </ul>
+        <div class="sign-out-list">
+          <img src="../assets/icons/icon-sign-out-sidebar.png" alt="" />
+          <a href="../index.html">Sign Out</a>
+        </div>
+      </div>
+    </aside>
+    <div class="wrapper">
+      <div class="container">
+        <div class="content">
+          <div class="head_content">
+            <!-- Left -->
+            <div class="left">
+              <div class="top">
+                <div class="my_recipes">
+                  <img
+                    src="../assets/icons/icon-recipes-myrecipes.png"
+                    alt=""
+                  />
+                  <p>My recipes</p>
+                </div>
+
+                <div class="heart">
+                  <img src="../assets/icons/heart-icon.png" alt="" />
+                  <span>0</span>
+                </div>
+              </div>
+              <div class="avata">
+                <div class="push_img">
+                  <img src="../assets/icons/btn-add-recipe.png" alt="" />
+                  <p>Upload image</p>
+                </div>
+                <input
+                  type="text"
+                  name="up_img"
+                  placeholder="Copy url của ảnh vào + Enter"
+                />
+              </div>
+              <div class="bottom">
+                <div class="new" style="display: flex">
+                  <img
+                    src="../assets/icons/icon-recipes-newrecipes.png"
+                    alt="new_category"
+                  />
+                  <p>New category</p>
+                </div>
+                <select
+                  style="display: none"
+                  name="category"
+                  id="select_category"
+                >
+                  <!-- thêm option vào đây -->
+                  <option value="" selected>Lựa chọn category</option>
+                </select>
+              </div>
+            </div>
+            <!-- Right -->
+            <div class="right">
+              <div class="pushlish">
+                <div class="title">
+                  <h2>Publish recipe</h2>
+                  <p>
+                    Publish your recipe on your website or share it with the
+                    Nutrium community
+                  </p>
+                </div>
+                <button class="push_lish">Publish</button>
+              </div>
+              <div class="basic">
+                <h2>Basic information</h2>
+                <p>Check and edit recipe's basic information</p>
+                <div class="info-table">
+                  <div class="tr">
+                    <span>Name</span>
+                    <input name="name" type="text" />
+                    <div class="img">
+                      <img
+                        src="../assets/icons/icon-recipes-pens.png"
+                        alt="edit"
+                      />
+                    </div>
+                  </div>
+                  <div class="tr">
+                    <span>Description</span>
+                    <input name="description" type="text" />
+                    <div class="img">
+                      <img
+                        src="../assets/icons/icon-recipes-pens.png"
+                        alt="edit"
+                      />
+                    </div>
+                  </div>
+                  <div class="tr">
+                    <span>Total time</span>
+                    <input name="time" type="text" />
+                    <div class="img">
+                      <img
+                        src="../assets/icons/icon-recipes-pens.png"
+                        alt="edit"
+                      />
+                    </div>
+                  </div>
+                  <div class="tr">
+                    <span>Preparation time</span>
+                    <input name="preparation_time" type="text" />
+                    <div class="img">
+                      <img
+                        src="../assets/icons/icon-recipes-pens.png"
+                        alt="edit"
+                      />
+                    </div>
+                  </div>
+                  <div class="tr">
+                    <span>Final weight</span>
+                    <input name="Final-weight" type="text" />
+                    <div class="img">
+                      <img
+                        src="../assets/icons/icon-recipes-pens.png"
+                        alt="edit"
+                      />
+                    </div>
+                  </div>
+                  <div class="tr">
+                    <span>Portions</span>
+                    <input name="Portions" type="text" />
+                    <div class="img">
+                      <img
+                        src="../assets/icons/icon-recipes-pens.png"
+                        alt="edit"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="creation">
+            <span>Creation</span>
+            <p>Create the recipe and choose the ingredients</p>
+          </div>
+          <div class="ingredients">
+            <div class="left_ingredients">
+              <div class="ingredients_list">
+                <span>Ingredients</span>
+                <p>Search and add ingredients to the recipe</p>
+                <div class="search">
+                  <div class="input_search">
+                    <div class="img_search">
+                      <img
+                        src="../assets/icons/icon-recipes-addrecipes.png"
+                        alt="up"
+                      />
+                    </div>
+                    <input type="text" placeholder="Add new ingredient" />
+                  </div>
+                  <div class="search-bar">
+                    <input type="text" placeholder="Search food" />
+                    <div class="sort">
+                      <img
+                        src="../assets/icons/btn-soft-up-food.png"
+                        alt="sort"
+                      />
+                      <input type="text" placeholder="Sort by nutrient" />
+                    </div>
+                    <div class="database">
+                      <input type="text" placeholder="All databases" />
+                    </div>
+                  </div>
+                  <div class="nutritional_table">
+                    <div class="table_head">
+                      <span>Nutritional Information</span>
+                      <span>Energy</span>
+                      <span>Fat</span>
+                      <span>Carbohydrate</span>
+                      <span>Protein</span>
+                      <span> </span>
+                    </div>
+                    <div class="table_body">
+                      <div class="row">
+                        <span>Keto 90 Second Bread</span>
+                        <span>Community Recipes</span>
+                        <div class="row_input">
+                          <span>1</span>
+                          <span>portion (87 grams)</span>
+                          <span>87g</span>
+                        </div>
+                      </div>
+                      <div class="number">
+                        <span>301 kcal</span>
+                        <span>27g</span>
+                        <span>6g</span>
+                        <span>11g</span>
+                      </div>
+                      <div class="add">
+                        <span>+</span>
+                      </div>
+                    </div>
+                    <div class="table_body">
+                      <div class="row">
+                        <span>Keto - Just Eggs</span>
+                        <span>Community Recipes</span>
+                        <div class="row_input">
+                          <span>1</span>
+                          <span>portion (190 grams)</span>
+                          <span>190g</span>
+                        </div>
+                      </div>
+                      <div class="number">
+                        <span>469 kcal</span>
+                        <span>40g</span>
+                        <span>7g</span>
+                        <span>23g</span>
+                      </div>
+                      <div class="add">
+                        <span>+</span>
+                      </div>
+                    </div>
+                    <div class="table_body">
+                      <div class="row">
+                        <span>Blueberry Lavender Breeze</span>
+                        <span>Community Recipes</span>
+                        <div class="row_input">
+                          <span>1</span>
+                          <span>portion (113 grams)</span>
+                          <span>113g</span>
+                        </div>
+                      </div>
+                      <div class="number">
+                        <span>14 kcal</span>
+                        <span>0g</span>
+                        <span>3g</span>
+                        <span>0g</span>
+                      </div>
+                      <div class="add">
+                        <span>+</span>
+                      </div>
+                    </div>
+                    <div class="table_body">
+                      <div class="row">
+                        <span>Jamaican Grapefruit</span>
+                        <span>Community Recipes</span>
+                        <div class="row_input">
+                          <span>1</span>
+                          <span>portion (122 grams)</span>
+                          <span>122g</span>
+                        </div>
+                      </div>
+                      <div class="number">
+                        <span>45 kcal</span>
+                        <span>0g</span>
+                        <span>13g</span>
+                        <span>1g</span>
+                      </div>
+                      <div class="add">
+                        <span>+</span>
+                      </div>
+                    </div>
+                    <div class="table_body">
+                      <div class="row">
+                        <span>Stewed Tomatoes</span>
+                        <span>Community Recipes</span>
+                        <div class="row_input">
+                          <span>100</span>
+                          <span>grams</span>
+                          <span>100g</span>
+                        </div>
+                      </div>
+                      <div class="number">
+                        <span>8 kcal</span>
+                        <span>0g</span>
+                        <span>2g</span>
+                        <span>0g</span>
+                      </div>
+                      <div class="add">
+                        <span>+</span>
+                      </div>
+                    </div>
+                    <div class="page">
+                      <div class="list_page">
+                        <button>
+                          <img src="../assets/icons/left-icon.png" alt="" />
+                        </button>
+
+                        <button>
+                          <img src="../assets/icons/right-icon.png" alt="" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cooking_method">
+                <span>Cooking method</span>
+                <p>Give instructions to prepare this recipe</p>
+                <div>
+                  <span>1</span>
+                  <input
+                    class="cooking"
+                    type="text"
+                    placeholder="Add new cooking method"
+                  />
+                  <div class="img_cooking">
+                    <img
+                      src="../assets/icons/icon-recipes-pens.png"
+                      alt="edit"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right_ingredients">
+              <div class="analysis">
+                <span>Global analysis per portion</span>
+                <p>Energy, macronutrients and fiber distribution</p>
+                <div class="energy">
+                  <span>Energy</span>
+                  <p><span>351</span> kcal</p>
+                </div>
+                <div class="chart">
+                  <div class="nutrition">
+                    <span class="fat">0g</span>
+                    <p>Fat</p>
+                  </div>
+                  <div class="nutrition">
+                    <span class="carbohydrate">11g</span>
+                    <p>Carbohydrate</p>
+                  </div>
+                  <div class="nutrition">
+                    <span class="protein">0g</span>
+                    <p>Protein</p>
+                  </div>
+                  <div class="nutrition">
+                    <span class="fiber">1g</span>
+                    <p>Fiber</p>
+                  </div>
+                </div>
+              </div>
+              <div class="macronutrients">
+                <h2>Macronutrients per portion</h2>
+                <p>Macronutrients distribution of the recipe</p>
+                <div class="chart-container">
+                  <div class="pie-chart">
+                    <div class="label fat-label">38.3%</div>
+                    <div class="label carb-label">48.9%</div>
+                    <div class="label protein-label">12.8%</div>
+                  </div>
+                </div>
+                <div class="legend">
+                  <div><span style="background-color: #e64a64"></span> Fat</div>
+                  <div>
+                    <span style="background-color: #e8a878"></span> Carbohydrate
+                  </div>
+                  <div>
+                    <span style="background-color: #17a589"></span> Protein
+                  </div>
+                </div>
+              </div>
+              <div class="table-container">
+                <h2>Micronutrients per portion</h2>
+                <p>Micronutrients distribution of the recipe</p>
+                <table>
+                  <tr>
+                    <td>Sodium</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin A</td>
+                    <td><span>4</span> ug</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin B-6</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin B-12</td>
+                    <td><span>0</span> ug</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin C</td>
+                    <td><span>14</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin D (D2 + D3)</td>
+                    <td><span>0</span> ug</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin E</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Vitamin K</td>
+                    <td><span>1</span> ug</td>
+                  </tr>
+                  <tr>
+                    <td>Sugars</td>
+                    <td><span>9</span> g</td>
+                  </tr>
+                  <tr>
+                    <td>Calcium</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Iron</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Magnesium</td>
+                    <td><span>4</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Phosphorus</td>
+                    <td><span>10</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Potassium</td>
+                    <td><span>124</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Zinc</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Copper</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Fluoride</td>
+                    <td><span>49</span> ug</td>
+                  </tr>
+                  <tr>
+                    <td>Manganese</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Selenium</td>
+                    <td><span>0</span> ug</td>
+                  </tr>
+                  <tr>
+                    <td>Thiamin</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Riboflavin</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Niacin</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Pantothenic acid</td>
+                    <td><span>0</span> mg</td>
+                  </tr>
+                  <tr>
+                    <td>Folate, total</td>
+                    <td><span>2</span> ug</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/recipe-add.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
